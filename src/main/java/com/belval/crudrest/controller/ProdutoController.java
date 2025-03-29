@@ -21,7 +21,6 @@ public class ProdutoController {
 	
 	@GetMapping ("/produtos")
 	public ResponseEntity<Iterable<Produto>> obterProdutos(){
-		
 		return ResponseEntity
 				.status(HttpStatus.OK)
 				.body(lista);
@@ -38,8 +37,10 @@ public class ProdutoController {
 //curl POST http://localhost:8080/produtos -H "Content-Type: application/json; Charset=utf-8" -d @produto-pao.json
 		
 		
-		System.out.println(produto.toString());
-		lista.add(produto);
+		System.out.println("Produto criado..." + produto.toString());
+		lista.add(produto); 
+		
+		
 		return ResponseEntity
 				.status(HttpStatus.CREATED)
 				.body(produto);
